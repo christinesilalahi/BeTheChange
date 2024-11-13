@@ -9,5 +9,5 @@ class PastEvent extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['name', 'date', 'location', 'description', 'report'];
+    protected $fillable = ['name', 'date', 'location', 'description', 'report', 'poster'];
 }

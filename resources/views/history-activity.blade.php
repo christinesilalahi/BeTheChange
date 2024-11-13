@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-<title>History activity</title>
+<title>History Activity</title>
 <link rel="stylesheet" href="{{ asset('assets/css/activity.css') }}">
 
 @section('content')
@@ -16,78 +16,17 @@
         </div>
     </div>
 
-<div class="activities">
-    <div class="activity-card">
-        <img src="activity1.png" alt="Kegiatan Bakti Sosial">
-        <div class="activity-details">
-            <h3>Kegiatan Bakti Sosial</h3>
-            <p img src="tanggal.png" alt="Kegiatan Bakti Sosial"></p>
-            <p class="date">23 Oktober 2024</p>
-            <p class="location">Desa Kebon Jeruk</p>
+    <div class="activities">
+        @foreach($past_events as $past_event)
+        <div class="activity-card">
+            <img src="{{ asset('assets/images/' . $past_event->poster) }}" alt="{{ $past_event->name }}">
+            <div class="activity-details">
+                <h3>{{ $past_event->name }}</h3>
+                <p class="date">{{ \Carbon\Carbon::parse($past_event->date)->format('d F Y') }}</p>
+                <p class="location">{{ $past_event->location }}</p>
+            </div>
         </div>
+        @endforeach
     </div>
-
-    <div class="activity-card">
-        <img src="activity2.png" alt="Gotong Royong Pembersihan">
-        <div class="activity-details">
-            <h3>Gotong Royong Pembersihan</h3>
-            <p class="date">29 Desember 2024</p>
-            <p class="location">Desa Bayam</p>
-        </div>
-    </div>
-
-    <div class="activity-card">
-        <img src="activity3.png" alt="Reboisasi Peduli Lingkungan">
-        <div class="activity-details">
-            <h3>Reboisasi Peduli Lingkungan</h3>
-            <p class="date">5 Januari 2025</p>
-            <p class="location">Tanjung Priok</p>
-        </div>
-    </div>
-
-    <div class="activity-card">
-        <img src="activity4.png" alt="Donor Darah Bersama">
-        <div class="activity-details">
-            <h3>Donor Darah Bersama</h3>
-            <p class="date">30 Oktober 2022</p>
-            <p class="location">Kecamatan Kebon Jeruk</p>
-        </div>
-    </div>
-
-    <div class="activity-card">
-        <img src="activity5.png" alt="Edukasi Lingkungan Sekolah">
-        <div class="activity-details">
-            <h3>Edukasi Lingkungan Sekolah</h3>
-            <p class="date">3 November 2023</p>
-            <p class="location">Desa Londor</p>
-        </div>
-    </div>
-
-    <div class="activity-card">
-        <img src="activity6.png" alt="Bantuan Banjir">
-        <div class="activity-details">
-            <h3>Bantuan Banjir</h3>
-            <p class="date">16 Desember 2024</p>
-            <p class="location">Kelurahan Bakti</p>
-        </div>
-    </div>
-
-    <div class="activity-card">
-        <img src="activity7.png" alt="Penggalangan Dana Panti Asuhan">
-        <div class="activity-details">
-            <h3>Penggalangan Dana Panti Asuhan</h3>
-            <p class="date">20 November 2024</p>
-            <p class="location">Kecamatan Sungai...</p>
-        </div>
-    </div>
-
-    <div class="activity-card">
-        <img src="activity8.png" alt="Kampanye Kesehatan Masyarakat">
-        <div class="activity-details">
-            <h3>Kampanye Kesehatan Masyarakat</h3>
-            <p class="date">1 Desember 2024</p>
-            <p class="location">Desa Deas</p>
-        </div>
-    </div>
-</div>
+</body>
 @endsection

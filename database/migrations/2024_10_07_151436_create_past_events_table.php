@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('location');
             $table->text('description');
             $table->text('report');
+            $table->string('poster');
             $table->timestamps();
         });
     }
