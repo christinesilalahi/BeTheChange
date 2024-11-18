@@ -11,7 +11,7 @@ class PastEventController extends Controller
     
     public function show()
     {
-        $past_event = PastEvent::first(); 
+        $past_event = PastEvent::all(); 
 
         return view('detail-report', ['past_event' => $past_event]);
     }

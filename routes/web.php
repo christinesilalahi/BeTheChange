@@ -5,12 +5,10 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\PastEventController;
 
 // Updated to return the homepage view
-Route::get('/', function () {
-    return view('homepage');
-})->name('homepage');
+Route::get('/', [EventController::class, 'homepage'])->name('homepage');
 
 // Event route
-Route::get('/event', [EventController::class, 'show'])->name('event');
+Route::get('/detail/event', [EventController::class, 'show'])->name('detail-event');
 
 // Other routes
 Route::get('/detail/report', [PastEventController::class, 'show'])->name('detail-report');

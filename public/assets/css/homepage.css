@@ -1,5 +1,5 @@
-*{
-    font-family: 'Inter', sans-serif;
+* {
+    font-family: "Inter", sans-serif;
 }
 
 .tagline {
@@ -8,29 +8,31 @@
 }
 
 .box {
-    position: relative; 
+    position: relative;
     width: 100%;
     height: 22.1rem;
 }
 
 .image {
-    width: 100%; 
+    width: 100%;
     height: auto;
     display: block;
 }
 
-.box::before { 
+.box::before {
     content: "";
     position: absolute;
     top: 0;
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
-.tagline-button-box, .see-more1, .see-more2 {
+.tagline-button-box,
+.see-more1,
+.see-more2 {
     position: absolute;
     top: 60%;
     left: 50%;
@@ -63,51 +65,54 @@
     z-index: 2;
 }
 
-.tagline-text1{
+.tagline-text1 {
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.tagline-text2{
+.tagline-text2 {
     font-size: 1.1rem;
     margin-top: 8px;
     font-weight: 500;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.text1{
+.text1 {
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.currently-activities, .prev-activities{
+.currently-activities,
+.prev-activities {
     margin: 4rem 3rem;
 }
 
-.see-more1{
+.see-more1 {
     margin-top: 4rem;
     margin-left: 38rem;
 }
 
-.see-more2{
+.see-more2 {
     margin-top: 18.5rem;
-    margin-left: 38rem;   
+    margin-left: 38rem;
 }
 
 .container {
     display: flex;
+
+    text-align: left;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     margin-top: 2rem;
 }
 
 .box-event {
+    display: flex;
+    flex-direction: column;
     width: 23%;
-    height: 100px;
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -116,4 +121,11 @@ a{
     font-size: 1rem;
     border-radius: 8px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.box-event img {
+    max-height: 200px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }

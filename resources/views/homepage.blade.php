@@ -20,10 +20,13 @@
             <p class="text1">Mari Beraksi!</p>
             <a href="#"><div class="see-more1">Lihat Semua</div></a>
             <div class="container">
-                <div class="box-event">Event 1</div>
-                <div class="box-event">Event 2</div>
-                <div class="box-event">Event 3</div>
-                <div class="box-event">Event 4</div>
+                @foreach($events as $event)
+                <div class="box-event">
+                    <div><img src={{$event->poster}}></div>
+                    <h4>{{$event->name}}</h4>
+                    <p>{{$event->date}}</p>
+                </div>
+                @endforeach
             </div>
         </div>
         <div class="prev-activities">

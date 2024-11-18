@@ -21,10 +21,10 @@
 
         <nav>
             <ul>
-                <li><a href="">Login / Register</a></li>
+                <li><a href="{{ route('daftar') }}">Login / Register</a></li>
                 <li><a href="">Profile</a></li>
-                <li><a href="">Create Event</a></li>
-                <li><a href="">Create Report</a></li>
+                <li><a href="{{ route('create-event') }}">Create Event</a></li>
+                <li><a href="{{ route('report') }}">Create Report</a></li>
             </ul>
         </nav>
     </div>
