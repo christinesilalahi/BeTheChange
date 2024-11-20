@@ -3,26 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\PastEvent;
-use App\Http\Requests\StorePastEventRequest;
-use App\Http\Requests\UpdatePastEventRequest;
+use Illuminate\Http\Request;
 
 class PastEventController extends Controller
 {
-    
-    // public function show()
-    // {
-    //     $past_event = PastEvent::first(); 
+    //
+    public function allPastEvents(){
+        $past_events = PastEvent::all();
+        return view('past-events.index', compact('past_events'));
+    }
 
-    //     return view('detail-report', ['past_event' => $past_event]);
-    // }
-
-    public function show()
-{
-    // Fetch completed events
-    $past_events = PastEvent::where('date', '<', now())->get();
-
-    // Pass the variable to the view
-    return view('history-activity', ['past_events' => $past_events]);
-}
-
+    public function getPastEvent($id){
+        $past_event = PastEvent::findOrFail($id);
+        $volunteers = $past_event->participators;
+        $organizer = $past_event->organizer;
+        return view('past-events.detail', compact('past_event', 'volunteers', 'organizer'));
+    }
 }

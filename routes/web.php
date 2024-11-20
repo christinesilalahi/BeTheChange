@@ -1,36 +1,32 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PastEventController;
-use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Route;
 
-// Updated to return the homepage view
-Route::get('/', [HomeController::class, 'index'])->name('homepage');
 
-// Event route
-Route::get('/event', [EventController::class, 'show'])->name('event');
+Route::get('/', [EventController::class, 'homeController'])->name('home');
 
-// Other routes
-Route::get('/activity', [ActivityController::class, 'show']);
-// Route::get('/history-activity', [PastEventController::class, 'show']);
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+Route::get('/register', function () {
+    return view('register');
+})->name('register');
 
-Route::get('/move-past-events', [EventController::class, 'moveToPastEvents'])->name('move-past-events');
-Route::get('/history/activity', [PastEventController::class, 'show'])->name('history-activity');
+Route::get('/past-events', [PastEventController::class, 'allPastEvents'])->name('past-events');
+Route::get('/past-events/{id}', [PastEventController::class, 'getPastEvent'])->name('past-event.details');
 
-Route::get('/create/report', function () {
-    return view('report');
-})->name('report');
+Route::get('/events', [EventController::class, 'allEvents'])->name('events');
+Route::get('events/{id}', [EventController::class, 'getEvent'])->name('event.details');
 
-Route::get('/create/event', function () {
-    return view('create-event');
-})->name('create-event');
+Route::get('/report-event', function () {
+    return view('past-events.report');
+})->name('make-report');
+Route::get('/create-event', function () {
+    return view('events.create');
+})->name('make-event');
 
-Route::get('/daftar', function () {
-    return view('daftar');
-})->name('daftar');
-
-Route::get('/profile', function () {
-    return view('profile');
-})->name('profile');
+Route::get('/profile/{id}', [UserController::class, 'getUser'])->name('profile');

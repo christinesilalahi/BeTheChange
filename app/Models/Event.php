@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
-    use HasFactory;
-
-    // protected $fillable = ['name', 'date', 'location', 'description'];
-    protected $fillable = ['name', 'date', 'location', 'description', 'poster'];
+    //
+    public function organizer(){
+        return $this->belongsTo(User::class);
+    }
+    public function volunteers(){
+        return $this->belongsToMany(User::class);
+    }
 }

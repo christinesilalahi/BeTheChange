@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class PastEvent extends Model
 {
-    use HasFactory;
-    
-    protected $fillable = ['name', 'date', 'location', 'description', 'report', 'poster'];
+    //
+    public function organizer(){
+        return $this->belongsTo(User::class);
+    }
+    public function participators(){
+        return $this->belongsToMany(User::class);
+    }
 }

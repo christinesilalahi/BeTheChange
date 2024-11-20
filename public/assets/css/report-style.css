@@ -1,30 +1,14 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
-
-/* HEADER */
-.navbar{
-    background-color: #07689F;
-    display: flex;
-    align-items: center;
-    padding: 15px 30px;
-    justify-content: left;
-    position: sticky;
-}
-
-.logo{
-    cursor: pointer;
-    margin-right: auto;
-    height: 100px;
+    font-family: "Inter", sans-serif;
 }
 
 /* BODY */
 
 .container {
-    max-width: 90%;
+    max-width: 75%;
     margin: 20px auto;
     padding: 20px;
     display: flex;
@@ -61,7 +45,7 @@ input[type="file"] {
     margin-bottom: 20px;
 }
 
-.choose-file-btn{
+.choose-file-btn {
     padding: 10px 10px;
     border: 1px solid #ccc;
     cursor: pointer;
@@ -72,69 +56,11 @@ input[type="file"] {
 
 input[type="submit"] {
     padding: 10px 50px;
-    background-color: #FF7E67;
+    background-color: #ff7e67;
     color: black;
     font-weight: 600;
     font-size: 1em;
     border: none;
     cursor: pointer;
     border-radius: 8px;
-}
-
-
-/* FOOTER */
-.footer{
-    width: 100%;
-    padding: 20px 2%;
-    background: #A2D5F2;
-    color: black;
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-    align-items: center;
-}
-.footerlogo{
-    width: 350px;
-}
-.footer div{
-    text-align: center;
-}
-.col-2{
-    flex-grow: 2;
-}
-.footer div h3{
-    font-weight: 600;
-    font-size: 1.3em;
-    margin-bottom: 30px;
-    letter-spacing: 1;
-}
-.col-3 a{
-    display: block;
-    text-decoration: none;
-    color: black;
-    font-weight: 600;
-    font-size: 1.3em;
-}
-.social-icons{
-    margin-top: 30px;
-}
-.social-icons i{
-    font-size: 35px;
-    margin: 0px 40px 0px 40px;
-    cursor: pointer;
-}
-.social-icons p{
-    color: black;
-}
-.footer .col-1,
-.footer .col-2,
-.footer .col-3 {
-  flex: 1;
-  text-align: center;
-}
-.footer .col-1 {
-    justify-content: flex-start;
-}
-.footer .col-3 {
-    justify-content: flex-end;
 }

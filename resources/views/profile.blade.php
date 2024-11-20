@@ -6,12 +6,10 @@
     <!-- BODY -->
     <div class="container">
       <div class="user-container">
-        <img src="{{ asset('assets/images/profile-picture.png') }}" class="image">
+        <img src="{{$user->picture}}" class="image">
         <div class="user-info">
-            <h3>Nama</h3>
-            <p>Alamat</p>
-            <p>Umur</p>
-            <p>TipeAkun</p>
+            <h3>{{$user->name}}</h3>
+            <p>{{$user->type}}</p>
         </div>
       </div>
       <form action="#">
@@ -22,26 +20,12 @@
           id="nama"
           placeholder="Masukan nama anda"
         />
-        <label for="umur">Umur</label>
-        <input
-          type="number"
-          name="umur"
-          id="umur"
-          placeholder="Masukan umur anda"
-        />
         <label for="email">Email</label>
         <input
           type="email"
           name="email"
           id="email"
           placeholder="Masukan email anda"
-        />
-        <label for="domisili">Domisili</label>
-        <input
-          type="text"
-          name="domisili"
-          id="domisili"
-          placeholder="Masukan domisili anda"
         />
         <label for="phone">No. Telp:</label>
         <input
@@ -52,8 +36,4 @@
         />
         <input type="submit" value="Update" />
     </div>
-
-    <!-- FOOTER -->
-    <div class="footer"></div>
-  </body>
-</html>
+@endsection

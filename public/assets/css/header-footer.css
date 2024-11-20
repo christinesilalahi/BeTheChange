@@ -1,15 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
-.navbar{
-    background-color: #07689F;
+.navbar {
+    background-color: #07689f;
     display: flex;
     align-items: center;
-    padding: 15px 30px;
+    padding: 5px 10px;
     justify-content: left;
     position: sticky;
     top: 0; /* Sticks at the top */
@@ -17,17 +17,18 @@
     width: 100%;
 }
 
-.logo{
+.logo {
     cursor: pointer;
     margin-right: auto;
-    height: 100px;
+    max-height: 100px;
+    height: 15vw;
 }
 
 /* FOOTER */
-.footer{
+.footer {
     width: 100%;
-    padding: 20px 2%;
-    background: #A2D5F2;
+    padding: 50px 2%;
+    background: #a2d5f2;
     color: black;
     display: flex;
     text-align: center;
@@ -35,88 +36,80 @@
     align-items: center;
     z-index: 1;
 }
-.footerlogo{
+.footerlogo {
     width: 350px;
 }
-.footer div{
+.footer div {
     text-align: center;
 }
-.col-2{
-    flex-grow: 2;
-}
-.footer div h3{
+.footer div h3 {
     font-weight: 600;
     font-size: 1.3em;
-    margin-bottom: 30px;
     letter-spacing: 1;
 }
-.col-3 a{
+.col-3 a {
     display: block;
     text-decoration: none;
     color: black;
     font-weight: 600;
     font-size: 1.3em;
 }
-.social-icons{
-    margin-top: 30px;
+.social-icons {
+    padding: 10px;
 }
-.social-icons i{
+.social-icons i {
     font-size: 35px;
     margin: 15px;
     cursor: pointer;
 }
-.social-icons p{
+.social-icons p {
     color: black;
 }
 .footer .col-1,
 .footer .col-2,
 .footer .col-3 {
-  flex: 1;
-  text-align: center;
-}
-.footer .col-1 {
-    justify-content: flex-start;
-}
-.footer .col-3 {
-    justify-content: flex-end;
+    flex: 1;
+    text-align: center;
 }
 
 /* HAMBURGER */
-a,button{
+a,
+button {
     cursor: pointer;
 }
 
-a{
+a {
     text-decoration: none;
     color: #fff;
 }
 
-.navigation{
+.navigation {
     position: fixed;
     right: -500px;
     width: 300px;
     height: 100%;
-    background-color: #07689F;
-    transition: .5s;
+    background-color: #07689f;
+    transition: 0.5s;
     z-index: 999;
 }
 
-.navigation ul li{
+.navigation ul li {
     color: white;
     text-align: right;
     text-transform: uppercase;
     list-style-type: none;
-    font-size: 1.2rem;
-    padding: 20px 30px;
-    border-bottom: 1pt solid #A2D5F2;
+    font-size: 1rem;
+    padding: 14px 21px;
+    border-bottom: 1pt solid #a2d5f2;
     font-weight: bold;
 }
 
-.hamburger, .bar{
+.hamburger,
+.bar {
     position: fixed;
 }
 
-.hamburger{
+.hamburger {
     display: block;
     position: fixed;
     top: 8%;
@@ -129,37 +122,37 @@ a{
     z-index: 1000;
 }
 
-.bar{
+.bar {
     top: 3px;
     background: #fff;
     width: 100%;
     height: 4px;
-    transition: all .3s ease-in;
+    transition: all 0.3s ease-in;
 }
 
-#bar2{
+#bar2 {
     top: 11px;
 }
 
-#bar3{
+#bar3 {
     top: 19px;
 }
 
-.navigation.active{
+.navigation.active {
     right: 0;
     z-index: 1000;
 }
 
-.hamburger.open #bar1{
+.hamburger.open #bar1 {
     background-color: #fff;
     transform: rotate(45deg) translate(6px, 5px);
 }
 
-.hamburger.open #bar2{
+.hamburger.open #bar2 {
     background-color: transparent;
 }
 
-.hamburger.open #bar3{
+.hamburger.open #bar3 {
     background-color: #fff;
     transform: rotate(-45deg) translate(6px, -5px);
 }
